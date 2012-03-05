@@ -1,0 +1,46 @@
+h1. Flume .NET Agent (thrift client)
+
+h2. License
+
+Apache2
+
+h2. Requirements
+
+tested in flume 0.9
+
+h2. Tutorial
+
+h3. How to use
+
+flume's source and sink ,
+open your flume master's config page,for example:
+http://localhost:35871/flumeconfig.jsp [flume master]
+<pre>
+collector_name1 : thriftSource( 2014 )| collectorSink("hdfs://localhost/flume/%{catalog}/2012", "",5000,raw());
+collector_name2 : thriftSource( 2014 )| collectorSink("hdfs://localhost/flume/%{catalog}/2012", "",5000,raw());
+</pre>
+and then map the collector to the physical node,
+http://localhost:35871/mastercommand.jsp
+<pre>
+map your_physical_node_name1	 collector_name1
+map your_physical_node_name2	 collector_name2
+
+</pre>
+ps: suppose the ip and node name is mapped as:
+your_physical_node_name1 == 10.1.1.125
+your_physical_node_name2 == 10.1.1.122
+
+and then,you can send your logs to the flume server through the agent now.
+<pre>
+  //init config
+            FlumeConfig.Instance.AddCollector(new Collector(){Name = "collector1", ThriftNodes = new FlumeNodeConfig[]{new FlumeNodeConfig(){Host = "10.1.1.125",Port = 2014,Enabled = true}, }});
+            FlumeConfig.Instance.AddCollector(new Collector(){Name = "collector2", ThriftNodes = new FlumeNodeConfig[]{new FlumeNodeConfig(){Host = "10.1.1.126",Port = 2015,Enabled = true}, }});
+            FlumeConfig.Instance.AddSources(new Source(){Name = "source1",Collector = "collector1"});
+            FlumeConfig.Instance.AddSources(new Source(){Name = "source2",Collector = "collector2"});
+          
+            //collecting
+            FlumeAgent. FlumeAgent agent=new FlumeAgent.FlumeAgent();
+            agent.Send("source1", "hello,world,datata,blala.....");
+            agent.Send("source2", "test from agent.....");
+
+</pre>

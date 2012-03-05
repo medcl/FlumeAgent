@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlumeAgent", "FlumeAgent.csproj", "{88E0E001-F431-4054-8937-E2E381E6B463}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "..\UnitTest\UnitTest.csproj", "{D702BC11-79E0-41B8-B134-9D2C66F72013}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88E0E001-F431-4054-8937-E2E381E6B463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E0E001-F431-4054-8937-E2E381E6B463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E0E001-F431-4054-8937-E2E381E6B463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E0E001-F431-4054-8937-E2E381E6B463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D702BC11-79E0-41B8-B134-9D2C66F72013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D702BC11-79E0-41B8-B134-9D2C66F72013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D702BC11-79E0-41B8-B134-9D2C66F72013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D702BC11-79E0-41B8-B134-9D2C66F72013}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

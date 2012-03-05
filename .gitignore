@@ -1,0 +1,11 @@
+/FlumeAgent/bin
+/FlumeAgent/obj
+
+*.suo
+*.ReSharper.user
+*.Cache
+*.user
+*.suo
+/FlumeAgent/Settings.StyleCop
+/FlumeAgent/StyleCop.Cache
+*.user

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88E0E001-F431-4054-8937-E2E381E6B463}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlumeAgent</RootNamespace>
+    <AssemblyName>FlumeAgent</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\FlumeNodeConfig.cs" />
+    <Compile Include="Config\Collector.cs" />
+    <Compile Include="Config\FlumeConfig.cs" />
+    <Compile Include="Config\Source.cs" />
+    <Compile Include="Exception\CollectorBrokenException.cs" />
+    <Compile Include="Exception\CollectorNotDefinedException.cs" />
+    <Compile Include="Connection\Connection\Connection.cs" />
+    <Compile Include="Connection\Connection\ConnectionBuilder.cs" />
+    <Compile Include="Connection\Connection\ConnectionPool.cs" />
+    <Compile Include="Connection\Connection\IConnection.cs" />
+    <Compile Include="Connection\Connection\IConnectionProvider.cs" />
+    <Compile Include="Connection\Connection\Server.cs" />
+    <Compile Include="Connection\FlumeNode.cs" />
+    <Compile Include="Connection\FlumeNodeManager.cs" />
+    <Compile Include="Connection\FlumeSession.cs" />
+    <Compile Include="FlumeAgent.cs" />
+    <Compile Include="Flume\EventStatus.cs" />
+    <Compile Include="Flume\Priority.cs" />
+    <Compile Include="Flume\ThriftFlumeEvent.cs" />
+    <Compile Include="Flume\ThriftFlumeEventServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Thrift\Collections\THashSet.cs" />
+    <Compile Include="Thrift\Protocol\TBase.cs" />
+    <Compile Include="Thrift\Protocol\TBase64Utils.cs" />
+    <Compile Include="Thrift\Protocol\TBinaryProtocol.cs" />
+    <Compile Include="Thrift\Protocol\TField.cs" />
+    <Compile Include="Thrift\Protocol\TJSONProtocol.cs" />
+    <Compile Include="Thrift\Protocol\TList.cs" />
+    <Compile Include="Thrift\Protocol\TMap.cs" />
+    <Compile Include="Thrift\Protocol\TMessage.cs" />
+    <Compile Include="Thrift\Protocol\TMessageType.cs" />
+    <Compile Include="Thrift\Protocol\TProtocol.cs" />
+    <Compile Include="Thrift\Protocol\TProtocolException.cs" />
+    <Compile Include="Thrift\Protocol\TProtocolFactory.cs" />
+    <Compile Include="Thrift\Protocol\TProtocolUtil.cs" />
+    <Compile Include="Thrift\Protocol\TSet.cs" />
+    <Compile Include="Thrift\Protocol\TStruct.cs" />
+    <Compile Include="Thrift\Protocol\TType.cs" />
+    <Compile Include="Thrift\TApplicationException.cs" />
+    <Compile Include="Thrift\TProcessor.cs" />
+    <Compile Include="Thrift\Transport\TBufferedTransport.cs" />
+    <Compile Include="Thrift\Transport\TFramedTransport.cs" />
+    <Compile Include="Thrift\Transport\THttpClient.cs" />
+    <Compile Include="Thrift\Transport\TServerSocket.cs" />
+    <Compile Include="Thrift\Transport\TServerTransport.cs" />
+    <Compile Include="Thrift\Transport\TSocket.cs" />
+    <Compile Include="Thrift\Transport\TStreamTransport.cs" />
+    <Compile Include="Thrift\Transport\TTransport.cs" />
+    <Compile Include="Thrift\Transport\TTransportException.cs" />
+    <Compile Include="Thrift\Transport\TTransportFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\FlumeConfig.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

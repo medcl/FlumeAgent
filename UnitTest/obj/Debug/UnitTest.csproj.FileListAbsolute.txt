@@ -1,0 +1,8 @@
+D:\Projects\.NET Related\FlumeAgent\UnitTest\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\.NET Related\FlumeAgent\UnitTest\bin\Debug\UnitTest.dll
+D:\Projects\.NET Related\FlumeAgent\UnitTest\bin\Debug\UnitTest.pdb
+D:\Projects\.NET Related\FlumeAgent\UnitTest\bin\Debug\FlumeAgent.dll
+D:\Projects\.NET Related\FlumeAgent\UnitTest\bin\Debug\nunit.framework.dll
+D:\Projects\.NET Related\FlumeAgent\UnitTest\bin\Debug\FlumeAgent.pdb
+D:\Projects\.NET Related\FlumeAgent\UnitTest\obj\Debug\UnitTest.dll
+D:\Projects\.NET Related\FlumeAgent\UnitTest\obj\Debug\UnitTest.pdb
