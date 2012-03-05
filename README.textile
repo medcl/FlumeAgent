@@ -1,34 +1,32 @@
-h1. Flume .NET Agent (thrift client)
+h2. Flume .NET Agent  (thrift client)
 
-h2. License
+h3. License
 
 Apache2
 
-h2. Requirements
+h3. Requirements
 
 tested in flume 0.9
 
-h2. Tutorial
+h3. Tutorial
 
-h3. How to use
-
-flume's source and sink ,
+config the flume's source and sink ,
 open your flume master's config page,for example:
 http://localhost:35871/flumeconfig.jsp [flume master]
 <pre>
 collector_name1 : thriftSource( 2014 )| collectorSink("hdfs://localhost/flume/%{catalog}/2012", "",5000,raw());
-collector_name2 : thriftSource( 2014 )| collectorSink("hdfs://localhost/flume/%{catalog}/2012", "",5000,raw());
+collector_name2 : thriftSource( 2015 )| collectorSink("hdfs://localhost/flume/%{catalog}/2012", "",5000,raw());
 </pre>
-and then map the collector to the physical node,
+and then map the collectors to the physical/logical node,
 http://localhost:35871/mastercommand.jsp
 <pre>
 map your_physical_node_name1	 collector_name1
 map your_physical_node_name2	 collector_name2
 
 </pre>
-ps: suppose the ip and node name is mapped as:
+ps: suppose the ip and node name is mapped as below:
 your_physical_node_name1 == 10.1.1.125
-your_physical_node_name2 == 10.1.1.122
+your_physical_node_name2 == 10.1.1.126
 
 and then,you can send your logs to the flume server through the agent now.
 <pre>
@@ -44,3 +42,5 @@ and then,you can send your logs to the flume server through the agent now.
             agent.Send("source2", "test from agent.....");
 
 </pre>
+
+Have fun!
