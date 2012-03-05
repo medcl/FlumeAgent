@@ -1,6 +1,8 @@
 /FlumeAgent/bin
 /FlumeAgent/obj
 
+/UnitTest/bin
+/UnitTest/obj
 *.suo
 *.ReSharper.user
 *.Cache
