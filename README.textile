@@ -31,15 +31,15 @@ your_physical_node_name2 == 10.1.1.126
 and then,you can send your logs to the flume server through the agent now.
 <pre>
   //init config
-            FlumeConfig.Instance.AddCollector(new Collector(){Name = "collector1", ThriftNodes = new FlumeNodeConfig[]{new FlumeNodeConfig(){Host = "10.1.1.125",Port = 2014,Enabled = true}, }});
-            FlumeConfig.Instance.AddCollector(new Collector(){Name = "collector2", ThriftNodes = new FlumeNodeConfig[]{new FlumeNodeConfig(){Host = "10.1.1.126",Port = 2015,Enabled = true}, }});
-            FlumeConfig.Instance.AddSources(new Source(){Name = "source1",Collector = "collector1"});
-            FlumeConfig.Instance.AddSources(new Source(){Name = "source2",Collector = "collector2"});
+FlumeConfig.Instance.AddCollector(new Collector(){Name = "collector1", ThriftNodes = new FlumeNodeConfig[]{new FlumeNodeConfig(){Host = "10.1.1.125",Port = 2014,Enabled = true}, }});
+FlumeConfig.Instance.AddCollector(new Collector(){Name = "collector2", ThriftNodes = new FlumeNodeConfig[]{new FlumeNodeConfig(){Host = "10.1.1.126",Port = 2015,Enabled = true}, }});
+FlumeConfig.Instance.AddSources(new Source(){Name = "source1",Collector = "collector1"});
+FlumeConfig.Instance.AddSources(new Source(){Name = "source2",Collector = "collector2"});
           
-            //collecting
-            FlumeAgent. FlumeAgent agent=new FlumeAgent.FlumeAgent();
-            agent.Send("source1", "hello,world,datata,blala.....");
-            agent.Send("source2", "test from agent.....");
+//collecting
+FlumeAgent. FlumeAgent agent=new FlumeAgent.FlumeAgent();
+agent.Send("source1", "hello,world,datata,blala.....");
+agent.Send("source2", "test from agent.....");
 
 </pre>
 
